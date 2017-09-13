@@ -1,8 +1,15 @@
-.navbar-nav {
-    float: none;
-    display: block;
-    text-align: center;
-    margin: 0 auto;
+.entete{
+    margin-bottom: 40px;
 }
 
+.panel{
+    padding-left:40px;
+    padding-right:40px;
+}
 
+/*.navbar-nav{*/
+    /*float:none;*/
+    /*margin: 0 auto;*/
+    /*display: block;*/
+    /*text-align: center;*/
+/*}*/
