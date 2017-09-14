@@ -16,3 +16,17 @@ exports.identification = function(mail, pass, callback) {
     });
     
 };
+
+exports.selectByMail = function(mail, callback) {
+    
+    var query = "SELECT * FROM membres WHERE mail = ?";
+    var inserts = [mail];
+    query = mysql.format(query, inserts);
+    
+    co.query(query, function (error, results, fields) {
+        if (error) throw error;
+        
+        callback(results);
+    });
+    
+};

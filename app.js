@@ -3,12 +3,19 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require("express-session");
 
 var index = require('./routes/index');
 var catalogue = require('./routes/catalogue');
 var aPropos = require('./routes/aPropos');
 
 var app = express();
+
+app.use(session({
+    secret: 'Th3C00k',
+    resave: true,
+    saveUninitialized: true
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
