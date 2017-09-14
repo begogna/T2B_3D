@@ -12,11 +12,17 @@
     text-align: center;
 }
 body {
-    background-image:url("/images/background.jpg");
+    background-image:url("/public/images/background.jpg");
     background-size: 100%;
     
 }
 
 #contenu{
-    text-align: center
+    text-align: center;
+
+}
+
+img{
+    width: 10%;
+    height: auto;
 }

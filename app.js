@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require("express-session");
 
+var home = require('./routes/home');
 var index = require('./routes/index');
 var catalogue = require('./routes/catalogue');
 var aPropos = require('./routes/aPropos');
@@ -28,9 +29,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/')));
 
-app.use('/', index);
+app.use('/', home);
+app.use('/index', index);
 app.use('/catalogue', catalogue);
 app.use('/aPropos', aPropos);
 
