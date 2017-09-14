@@ -1,9 +1,14 @@
-Projet tutoré : T2B
+# Projet tutoré : T2B
 
-Contributeurs : 
+#### Contributeurs : 
 
-** Begona
-** Tom
-** Flavien
+* Begona
+* Tom
+* Flavien
 
-Dépendances NODE.JS disponibles dans package.json
+
+#### Informations : 
+
+** Dépendances npm disponibles dans package.json **
+
+** Fichier coDB.js à créer afin de se connecter à la BDD **
