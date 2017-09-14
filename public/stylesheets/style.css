@@ -18,11 +18,15 @@ body {
 }
 
 #contenu{
-    text-align: center;
+    display: flex;
+    }
 
-}
+#contenu > img{
+    margin: auto;
+    }
 
-img{
-    width: 10%;
-    height: auto;
+.table{
+    background-color: rgba(0, 59, 72, 0.6);
+    background: rgba(0, 59, 72, 0.6);
+    color: rgba(0, 59, 72, 0.6);
 }
