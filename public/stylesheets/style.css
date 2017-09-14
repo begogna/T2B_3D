@@ -3,13 +3,20 @@
 }
 
 .panel{
-    padding-left:40px;
-    padding-right:40px;
+    padding-left:70px;
+    padding-right:70px;
 }
 
-/*.navbar-nav{*/
-    /*float:none;*/
-    /*margin: 0 auto;*/
-    /*display: block;*/
-    /*text-align: center;*/
-/*}*/
+.navbar-nav{
+    margin: 0 auto;
+    text-align: center;
+}
+body {
+    background-image:url("/images/background.jpg");
+    background-size: 100%;
+    
+}
+
+#contenu{
+    text-align: center
+}
