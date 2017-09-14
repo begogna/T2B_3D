@@ -11,7 +11,7 @@ router.get('/', function (req, res, next) {
             res.render('index', {title: 'TBB', errCo: true, co: false, nomMembre: null});
         }
         else if (sess.mail) {
-            
+            console.log('connecté');
             //APPEL DU MODEL - CO BDD / REQS
             var modelMembres = require('../model/modelMembre');
             
@@ -20,6 +20,7 @@ router.get('/', function (req, res, next) {
             });
         }
         else {
+            console.log('pas rentre dans co');
             res.render('index', {title: 'TBB', errCo: false, co: false, nomMembre: null});
         }
     }
@@ -31,28 +32,36 @@ router.post('/', function (req, res) {
     
     var mail = req.body.mail;
     var pass = req.body.pass;
+    var deco = req.body.deco;
     
-    //APPEL DU MODEL - CO BDD / REQS
-    var modelMembres = require('../model/modelMembre');
-    
-    modelMembres.identification(mail, pass, function (datas) {
+    if (mail || mail === "") {
         
-        //SI LA REQUETE RENVOIE UN RESULTAT ON CREE LA SESSION
-        if (datas.length > 0) {
+        //APPEL DU MODEL - CO BDD / REQS
+        var modelMembres = require('../model/modelMembre');
+        
+        modelMembres.identification(mail, pass, function (datas) {
             
-            if (sess.errCO) {
-                req.session.destroy()
+            //SI LA REQUETE RENVOIE UN RESULTAT ON CREE LA SESSION
+            if (datas.length > 0) {
+                
+                if (sess.errCO) {
+                    sess.errCO = false;
+                }
+                
+                sess.mail = mail;
+                
+                res.redirect("/index");
             }
-            
-            sess.mail = mail;
-            
-            res.redirect("/");
-        }
-        else {
-            sess.errCO = true;
-            res.redirect("/");
-        }
-    });
+            else {
+                sess.errCO = true;
+                res.redirect("/index");
+            }
+        });
+    }
+    else if (deco) {
+        req.session.destroy();
+        res.redirect("/index");
+    }
 });
 
 module.exports = router;

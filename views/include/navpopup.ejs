@@ -28,11 +28,32 @@
         </div>
 
         <div class="col text-right">
+
+            <% if (!co) { %>
             <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#connexionModal">Connexion
             </button>
             <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#inscriptionModal">
                 Inscription
             </button>
+            <% } %>
+
+            <% if (co) { %>
+
+            <div class="row">
+                <div class="col-md-6">
+                    Bonjour <%= nomMembre %>
+                </div>
+                <div class="col-md">
+                    <form action="/index" method="post">
+                        <input type="hidden" name="deco" value="deco">
+
+                        <button type="submit" class="btn btn-default">
+                            deconnexion
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <% } %>
         </div>
     </nav>
 </div>
@@ -52,7 +73,7 @@
             <div class="modal-body">
                 <div class="col align-self-start"></div>
                 <div class="col align-self-center">
-                    <form>
+                    <form action="./index" method="post">
                         <a id="to-register-trigger" style="display:inline-block;" href="#">Pas encore inscrit ?</a>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
