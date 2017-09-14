@@ -1,131 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <title></title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
-    <link href="stylesheets/style.css" rel="stylesheet">
+<% include include/head %>
 
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"-->
-    <!--crossorigin="anonymous">-->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-        crossorigin="anonymous"></script>
+    <body>
 
-    <script src="javascripts/bootstrap.min.js"></script>
-</head>
-
-<body>
-
-    <!-- NavBar -->
-
-    <div class="entete">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="col">
-                <a class="navbar-brand" href="#">T2B</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <% include include/navpopup %>
+            <!-- contenu -->
+            <div class="container">
+                <p>
+                    Consectetur occaecat ullamco proident est officia officia anim. Excepteur in duis culpa esse aliqua cupidatat est aliqua
+                    esse deserunt adipisicing Lorem et deserunt. Culpa nisi adipisicing in elit consequat cillum. Est mollit
+                    aliquip eu nisi reprehenderit aliquip. Est ea commodo duis mollit sunt in esse voluptate incididunt nisi.
+                    Labore do quis qui cupidatat mollit irure dolore sit velit non. Id cupidatat deserunt aute dolore consectetur.
+                    Consectetur occaecat ullamco proident est officia officia anim. Excepteur in duis culpa esse aliqua cupidatat
+                    est aliqua esse deserunt adipisicing Lorem et deserunt. Culpa nisi adipisicing in elit consequat cillum.
+                    Est mollit aliquip eu nisi reprehenderit aliquip. Est ea commodo duis mollit sunt in esse voluptate incididunt
+                    nisi. Labore do quis qui cupidatat mollit irure dolore sit velit non. Id cupidatat deserunt aute dolore
+                    consectetur. Consectetur occaecat ullamco proident est officia officia anim. Excepteur in duis culpa
+                    esse aliqua cupidatat est aliqua esse deserunt adipisicing Lorem et deserunt. Culpa nisi adipisicing
+                    in elit consequat cillum. Est mollit aliquip eu nisi reprehenderit aliquip. Est ea commodo duis mollit
+                    sunt in esse voluptate incididunt nisi. Labore do quis qui cupidatat mollit irure dolore sit velit non.
+                    Id cupidatat deserunt aute dolore consectetur.
+                </p>
             </div>
 
-            <div class="col-6">
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/">CREER</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/catalogue">CATALOGUE</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="/aPropos">A PROPOS</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    </body>
 
-            <div class="col text-right">
-                <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#connexionModal">Connexion</button>
-                <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#inscriptionModal">Inscription</button>
-            </div>
-        </nav>
-    </div>
-
-
-    <!-- Modal de connexion -->
-
-    <div class="modal fade" id="connexionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Connexion</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                    <div class="col align-self-start"></div>
-                    <div class="col align-self-center">
-                        <form>
-                            <a id="to-register-trigger" style="display:inline-block;" href="#">Pas encore inscrit ?</a>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                <a id="reset-popup-trigger" href="#">mot de passe oublié ?</a>
-                            </div>
-                            <button type="submit" class="btn btn-blue">Se connecter</button>
-                        </form>
-                    </div>
-                    <div class="col align-self-end"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal d'inscription -->
-
-    <div class="modal fade" id="inscriptionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Inscription</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                </div>
-                <div class="modal-body">
-                    <div class="col align-self-start"></div>
-                    <div class="col align-self-center">
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" required>
-                                    "Coche la case, soit sympa..."
-                                    <a target="_blank" href="http://www.creabybego.com/">Conditions d'utilisation</a>
-                                </label>
-                            </div>
-                            <button type="submit" class="btn btn-blue">S'inscrire</button>
-                        </form>
-                    </div>
-                    <div class="col align-self-end"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
+</html>
