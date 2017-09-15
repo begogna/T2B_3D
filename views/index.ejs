@@ -50,6 +50,10 @@
                     <!-- Contenu -->
 
                     <div class="container col-8" id="contenu">
+                        <% if (errCo) { %>
+                        <div class="alert alert-danger" role="alert">Identifiants incorrects</div>
+                        <% } %>
+
                         <img src="public/images/bague.jpg">
                     </div>
 

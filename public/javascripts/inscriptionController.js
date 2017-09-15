@@ -1,0 +1,5 @@
+var inscriptionController = function () {
+
+
+
+}();
