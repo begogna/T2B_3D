@@ -3,7 +3,7 @@
 <div class="entete">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="col">
-            <a class="navbar-brand" href="#">T2B</a>
+            <a class="navbar-brand" href="/">T2B</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -110,25 +110,41 @@
             <div class="modal-body">
                 <div class="col align-self-start"></div>
                 <div class="col align-self-center">
+
+                    <div id="divErrorInscr" class="alert alert-danger" role="alert"></div>
+
                     <form>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                   aria-describedby="emailHelp" placeholder="Enter email">
+                            <label for="exampleInputPassword1">Prénom</label>
+                            <input type="text" name="prenom" class="form-control" id="inputPrenom"
+                                   placeholder="Prénom">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Nom</label>
+                            <input type="text" name="nom" class="form-control" id="inputNom"
+                                   placeholder="Nom">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Adresse e-mail</label>
+                            <input type="email" name="mail" class="form-control" id="inputMail"
+                                   aria-describedby="emailHelp" placeholder="Email">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1"
-                                   placeholder="Password">
+                            <label for="exampleInputPassword1">Mot de passe</label>
+                            <input type="password" name="pass" class="form-control" id="inputPass"
+                                   placeholder="Mot de passe">
                         </div>
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" required>
+                                <input name="conditions" id="checkCondis" type="checkbox" required>
                                 "Coche la case, soit sympa..."
                                 <a target="_blank" href="http://www.creabybego.com/">Conditions d'utilisation</a>
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-blue">S'inscrire</button>
+
+                        <button id="btnSubmit" class="btn btn-blue">S'inscrire</button>
                     </form>
                 </div>
                 <div class="col align-self-end"></div>
