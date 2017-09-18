@@ -3,6 +3,7 @@
 
 <% include include/head %>
 
+
     <body>
 
         <% include include/navpopup %>
@@ -36,9 +37,15 @@
                     </select>
                                 </div>
                                 <div class="form-group text-center">
-                                    <button type="button" class="btn btn-trash"><span class="glyphicon glyphicon-share"></span></button>
-                                    <button type="button" class="btn btn-trash"><span class="glyphicon glyphicon-edit"></span></button>
-                                    <button type="button" class="btn btn-trash"><span class="glyphicon glyphicon-edit"></span></button>
+                                    <a href="">                                        
+                                        <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="">
+                                        <i id ="share" class="fa fa-share-alt" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="fa fa-file" aria-hidden="true"></i>
+                                    </a>
                                 </div>
                                 <div class="form-group text-center">
                                     <button type="submit" class="btn btn-default">Créer</button>
@@ -50,9 +57,11 @@
                     <!-- Contenu -->
 
                     <div class="container col-8" id="contenu">
-                        <% if (errCo) { %>
+                        <!-- <% if (errCo) { %> -->
+                        <!-- <div class="container col-8" id="contenu"> -->
                         <div class="alert alert-danger" role="alert">Identifiants incorrects</div>
-                        <% } %>
+                        <!-- </div> -->
+                        <!-- <% } %> -->
 
                         <img src="public/images/bague.jpg">
                     </div>
@@ -87,6 +96,8 @@
                     </div>
                 </div>
             </div>
+
+
     </body>
 
 </html>

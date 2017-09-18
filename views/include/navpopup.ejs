@@ -4,9 +4,8 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="col">
             <a class="navbar-brand" href="/">T2B</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
@@ -14,54 +13,55 @@
         <div class="col-6">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/index">CREER</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/catalogue">CATALOGUE</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="/aPropos">A PROPOS</a>
+                        <a class="nav-link" href="/aPropos">A PROPOS</a>
                     </li>
                 </ul>
             </div>
         </div>
 
         <div class="col text-right">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
 
             <% if (!co) { %>
-            <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#connexionModal">Connexion
+                <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#connexionModal">Connexion
             </button>
-            <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#inscriptionModal">
+                <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#inscriptionModal">
                 Inscription
             </button>
-            <% } %>
+                <% } %>
 
-            <% if (co) { %>
+                    <% if (co) { %>
 
-            <div class="row">
-                <div class="col-md-6">
-                    Bonjour <%= nomMembre %>
-                </div>
-                <div class="col-md">
-                    <form action="/index" method="post">
-                        <input type="hidden" name="deco" value="deco">
+                        <div class="row">
+                            <div class="col-md-6">
+                                Bonjour
+                                <%= nomMembre %>
+                            </div>
+                            <div class="col-md">
+                                <form action="/index" method="post">
+                                    <input type="hidden" name="deco" value="deco">
 
-                        <button type="submit" class="btn btn-default">
+                                    <button type="submit" class="btn btn-default">
                             deconnexion
                         </button>
-                    </form>
-                </div>
-            </div>
-            <% } %>
+                                </form>
+                            </div>
+                        </div>
+                        <% } %>
         </div>
     </nav>
 </div>
 
 <!-- Modal de connexion -->
 
-<div class="modal fade" id="connexionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
+<div class="modal fade" id="connexionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -77,13 +77,11 @@
                         <a id="to-register-trigger" style="display:inline-block;" href="#">Pas encore inscrit ?</a>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" name="mail" class="form-control" id="exampleInputEmail1"
-                                   aria-describedby="emailHelp" placeholder="Enter email">
+                            <input type="email" name="mail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
-                            <input type="password" name="pass" class="form-control" id="exampleInputPassword1"
-                                   placeholder="Password">
+                            <input type="password" name="pass" class="form-control" id="exampleInputPassword1" placeholder="Password">
                             <a id="reset-popup-trigger" href="#">mot de passe oublié ?</a>
                         </div>
                         <button type="submit" class="btn btn-blue">Se connecter</button>
@@ -97,8 +95,7 @@
 
 <!-- Modal d'inscription -->
 
-<div class="modal fade" id="inscriptionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
+<div class="modal fade" id="inscriptionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -116,25 +113,21 @@
                     <form>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Prénom</label>
-                            <input type="text" name="prenom" class="form-control" id="inputPrenom"
-                                   placeholder="Prénom">
+                            <input type="text" name="prenom" class="form-control" id="inputPrenom" placeholder="Prénom">
                         </div>
 
                         <div class="form-group">
                             <label for="exampleInputPassword1">Nom</label>
-                            <input type="text" name="nom" class="form-control" id="inputNom"
-                                   placeholder="Nom">
+                            <input type="text" name="nom" class="form-control" id="inputNom" placeholder="Nom">
                         </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Adresse e-mail</label>
-                            <input type="email" name="mail" class="form-control" id="inputMail"
-                                   aria-describedby="emailHelp" placeholder="Email">
+                            <input type="email" name="mail" class="form-control" id="inputMail" aria-describedby="emailHelp" placeholder="Email">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Mot de passe</label>
-                            <input type="password" name="pass" class="form-control" id="inputPass"
-                                   placeholder="Mot de passe">
+                            <input type="password" name="pass" class="form-control" id="inputPass" placeholder="Mot de passe">
                         </div>
                         <div class="checkbox">
                             <label>
