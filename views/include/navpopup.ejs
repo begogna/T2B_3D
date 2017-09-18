@@ -108,9 +108,8 @@
                 <div class="col align-self-start"></div>
                 <div class="col align-self-center">
 
-                    <div id="divErrorInscr" class="alert alert-danger" role="alert"></div>
-
-                    <form>
+                    <!--<div id="divErrorInscr" class="alert alert-danger" role="alert"></div>-->
+                    <form action="/index" method="post">
                         <div class="form-group">
                             <label for="exampleInputPassword1">Prénom</label>
                             <input type="text" name="prenom" class="form-control" id="inputPrenom" placeholder="Prénom">
@@ -123,11 +122,13 @@
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Adresse e-mail</label>
-                            <input type="email" name="mail" class="form-control" id="inputMail" aria-describedby="emailHelp" placeholder="Email">
+                            <input type="email" name="mailInscr" class="form-control" id="inputMail"
+                                   aria-describedby="emailHelp" placeholder="Email">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Mot de passe</label>
-                            <input type="password" name="pass" class="form-control" id="inputPass" placeholder="Mot de passe">
+                            <input type="password" name="passInscr" class="form-control" id="inputPass"
+                                   placeholder="Mot de passe">
                         </div>
                         <div class="checkbox">
                             <label>
@@ -137,7 +138,7 @@
                             </label>
                         </div>
 
-                        <button id="btnSubmit" class="btn btn-blue">S'inscrire</button>
+                        <button type="submit" id="btnSubmit" class="btn btn-blue">S'inscrire</button>
                     </form>
                 </div>
                 <div class="col align-self-end"></div>

@@ -6,9 +6,10 @@ var sess;
 router.get('/', function (req, res, next) {
         
         sess = req.session;
+        var paramInscr = req.query.inscr;
         
         if (sess.errCO) {
-            res.render('index', {title: 'TBB', errCo: true, co: false, nomMembre: null});
+            res.render('index', {title: 'TBB', errCo: true, co: false, nomMembre: null, inscr: false});
         }
         else if (sess.mail) {
             console.log('connecté');
@@ -16,12 +17,14 @@ router.get('/', function (req, res, next) {
             var modelMembres = require('../model/modelMembre');
             
             modelMembres.selectByMail(sess.mail, function (datas) {
-                res.render('index', {title: 'TBB', errCo: false, co: true, nomMembre: datas[0]['prenom']});
+                res.render('index', {title: 'TBB', errCo: false, co: true, nomMembre: datas[0]['prenom'], inscr: false});
             });
         }
+        else if (paramInscr === 'done') {
+            res.render('index', {title: 'TBB', errCo: false, co: false, nomMembre: null, inscr: true});
+        }
         else {
-            console.log('pas rentre dans co');
-            res.render('index', {title: 'TBB', errCo: false, co: false, nomMembre: null});
+            res.render('index', {title: 'TBB', errCo: false, co: false, nomMembre: null, inscr: false});
         }
     }
 );
@@ -33,6 +36,12 @@ router.post('/', function (req, res) {
     var mail = req.body.mail;
     var pass = req.body.pass;
     var deco = req.body.deco;
+    
+    var prenom = req.body.prenom;
+    var nom = req.body.nom;
+    var mailInscr = req.body.mailInscr;
+    var passInscr = req.body.passInscr;
+    
     
     if (mail || mail === "") {
         
@@ -57,6 +66,14 @@ router.post('/', function (req, res) {
                 res.redirect("/index");
             }
         });
+    }
+    else if(prenom || prenom === ""){
+    
+        //APPEL DU MODEL - CO BDD / REQS
+        var modelMembres = require('../model/modelMembre');
+    
+        modelMembres.inscription(nom, prenom, mailInscr, passInscr);
+        res.redirect("/index/?inscr=done");
     }
     else if (deco) {
         req.session.destroy();
