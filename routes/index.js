@@ -7,12 +7,12 @@ router.get('/', function (req, res, next) {
         
         sess = req.session;
         var paramInscr = req.query.inscr;
+        var paramCo = req.query.co;
         
-        if (sess.errCO) {
+        if (paramCo === 'err') {
             res.render('index', {title: 'TBB', errCo: true, co: false, nomMembre: null, inscr: false});
         }
         else if (sess.mail) {
-            console.log('connecté');
             //APPEL DU MODEL - CO BDD / REQS
             var modelMembres = require('../model/modelMembre');
             
@@ -50,20 +50,14 @@ router.post('/', function (req, res) {
         
         modelMembres.identification(mail, pass, function (datas) {
             
-            //SI LA REQUETE RENVOIE UN RESULTAT ON CREE LA SESSION
-            if (datas.length > 0) {
-                
-                if (sess.errCO) {
-                    sess.errCO = false;
-                }
+            //SI datas RENVOIE TRUE CONNEXION OK
+            if (datas) {
                 
                 sess.mail = mail;
-                
                 res.redirect("/index");
             }
             else {
-                sess.errCO = true;
-                res.redirect("/index");
+                res.redirect("index/?co=err");
             }
         });
     }
