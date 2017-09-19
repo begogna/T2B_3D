@@ -1,16 +1,17 @@
-  
+
 var renderer,
     scene,
     camera;
-    myCanvas = document.getElementById('3DCanvas');
-    console.log("myCanvas ", myCanvas);
-    
+myCanvas = document.getElementById('3DCanvas');
+console.log("myCanvas ", myCanvas);
+
+
 //RENDERER
 renderer = new THREE.WebGLRenderer({ canvas: myCanvas, antialias: true });
-console.log("dos");
-renderer.setClearColor(0x000000);
+//if the browser does not support it:
+// renderer = new THREE.CanvasRenderer();renderer.setClearColor(0x000000);
 renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize(window.innerWidth, window.innerHeight);
+//renderer.setSize(window.innerWidth, window.innerHeight);
 
 //CAMERA
 camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 3000);
@@ -35,13 +36,26 @@ loader.load('../public/fonts/droid/droid_sans_bold.typeface.json', function (fon
     init(font);
 });
 
-// https://threejs.org/docs/#api/geometries/Texgeometry
+// https://threejs.org/docs/#api/geometries/TextGeometry
 function init(font) {
-    var theText = "BATOU";
-    //var theText = document.getElementById('text3D').value;
-    console.log( "the text is ", theText);
+
     
-    var geometry = new THREE.TextGeometry(theText, {
+    var textHash = "BATOU";
+    
+    // Take the text from the hash (url after #)
+    var hash = document.location.hash.substr( 1 );
+
+    // check on lenght 
+    if ( hash.length !== 0 ) {
+        textHash = hash;
+    }
+// for using the hash we need http://localhost:8080/index/#batou
+    console.log("the text is ", textHash);
+
+    var theText = "BATOU";
+    // var theText = document.getElementById('text3D').value;
+
+    var geometry = new THREE.TextGeometry(textHash, {
         font: font,
         size: 80,
         height: 20,
@@ -72,13 +86,6 @@ function init(font) {
     mesh.position.x = 0;
     mesh.position.y = 0;
     mesh.position.z = -1000;
-
-    //Init the render motor
-    renderer = new THREE.WebGLRenderer({ canvas: myCanvas, antialias: true });
-    //if the browser does not support it:
-    // renderer = new THREE.CanvasRenderer();
-    renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(window.innerWidth, window.innerHeight);
 
 
     scene.add(mesh);

@@ -14,7 +14,7 @@ router.get('/', function (req, res, next) {
     var text3D;
     if (req.query.text3D) {
         text3D = req.query.text3D;
-        console.log(text3D);
+        console.log("??", text3D);
     }
 
     if (paramCo === 'err') {

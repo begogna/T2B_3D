@@ -10,7 +10,7 @@ router.post('/', function (req, res) {
 
     console.log("le text ", text3D);
 
-    res.redirect("../index/?text3D="+text3D);
+    res.redirect("../index/#"+text3D);
 });
 
 module.exports = router;
