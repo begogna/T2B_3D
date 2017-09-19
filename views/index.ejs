@@ -15,22 +15,23 @@
                 <div class="row panel">
                     <div class="col-2">
                         <div class="card">
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <p>Texte</p>
-                                    <input id="inputText" class="form-control" placeholder="Texte">
-                                </div>
-                                <div class="form-group">
-                                    <p>Font</p>
-                                    <select class="form-control">
+                                <form action="#" method="post" id="form_create">
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <p>Texte</p>
+                                            <input name="inputText" id="inputText" class="form-control" placeholder="Texte">
+                                        </div>
+                                        <div class="form-group">
+                                            <p>Font</p>
+                                            <select class="form-control">
                         <option>En mettre plusieurs</option>
                         <option>1</option>
                         <option>2</option>
                     </select>
-                                </div>
-                                <div class="form-group">
-                                    <p>Taille</p>
-                                    <select class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <p>Taille</p>
+                                            <select class="form-control">
                         <option>10 cm</option>
                         <option>12 cm</option>
                         <option>14 cm</option>
@@ -104,7 +105,8 @@
                 </div>
             </div>
 
-
+            <script src="../public/javascripts/three.min.js"></script>
+            <script src="../public/javascripts/textGeo.js"></script>
     </body>
 
 </html>

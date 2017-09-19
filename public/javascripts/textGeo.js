@@ -1,3 +1,6 @@
+var textGeo = function () {
+    
+
 var renderer,
     scene,
     camera,
@@ -28,16 +31,17 @@ scene.add(light2);
 var mesh;
 var loader = new THREE.FontLoader();
 loader.load('fonts/droid/droid_sans_bold.typeface.json', function (font) {
+    console.log("calling init threejs");
     init(font);
 });
 
-// https://threejs.org/docs/#api/geometries/TextGeometry
+// https://threejs.org/docs/#api/geometries/Texgeometry
 function init(font) {
     // var theText = "BATOU";
     var theText = document.getElementById("inputText").value;
     console.log(theText);
-    
-    var geometry = new THREE.TextGeometry(theText, {
+
+    var geometry = new THREE.Texgeometry(theText, {
         font: font,
         size: 80,
         height: 20,
@@ -47,6 +51,20 @@ function init(font) {
         bevelSize: 6,
         bevelSegments: 5
     });
+
+
+    // center the geometry
+    // - THREE.Texgeometry isnt centered for unknown reasons. all other geometries are centered
+    geometry.computeBoundingBox();
+    var center = new THREE.Vector3();
+    center.x = (geometry.boundingBox.max.x - geometry.boundingBox.min.x) / 2;
+    center.y = (geometry.boundingBox.max.y - geometry.boundingBox.min.y) / 2;
+    center.z = (geometry.boundingBox.max.z - geometry.boundingBox.min.z) / 2;
+    geometry.vertices.forEach(function (vertex) {
+        vertex.sub(center);
+    });
+
+
     var material = new THREE.MeshLambertMaterial({ color: 0x326fbd });
 
     mesh = new THREE.Mesh(geometry, material);
@@ -55,9 +73,18 @@ function init(font) {
     mesh.position.y = 0;
     mesh.position.z = -1000;
 
+    //Init the render motor
     renderer = new THREE.WebGLRenderer({ canvas: myCanvas, antialias: true });
+    //if the browser does not support it:
+    // renderer = new THREE.CanvasRenderer();
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
+
+    var container = document.getElementById('contenu');
+    renderer.domElement.style.position = "relative";
+    container.appendChild(renderer.domElement);
+
+
     scene.add(mesh);
     //RENDER LOOP
     render();
@@ -72,3 +99,6 @@ function render() {
     requestAnimationFrame(render);
 
 }
+
+
+}();
