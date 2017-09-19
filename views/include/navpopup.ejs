@@ -19,8 +19,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/catalogue">CATALOGUE</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item dropdown">
                         <a class="nav-link" href="/aPropos">A PROPOS</a>
+                        <!-- <a class="nav-link dropdown-toggle" href="/aPropos" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">A PROPOS</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Le concept</a>
+                            <a class="dropdown-item" href="#">L'équipe</a>
+                        </div> -->
                     </li>
                 </ul>
             </div>
@@ -43,7 +49,7 @@
                             <div class="col">
                                 <form action="/index" method="post"> Bonjour
                                     <%= nomMembre %>
-                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                         <input type="hidden" name="deco" value="deco">
                                         <button type="submit" class="btn btn-default">Déconnexion</button>
                                 </form>
