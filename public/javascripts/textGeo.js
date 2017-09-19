@@ -16,14 +16,14 @@ console.log(canvasHeight);
     renderer.setClearColor(0x000000);
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(canvasWidth, canvasHeight);
-    renderer.setClearColor(0x000000, 0);
+    // renderer.setClearColor(0x000000, 0);
 
     //CAMERA
     camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 3000);
 
     //SCENE
     scene = new THREE.Scene();
-    // scene.background = new THREE.Color(255, 255, 255);
+    scene.background = new THREE.Color(255, 255, 255);
 
     //LIGHTS
     var light = new THREE.AmbientLight(0xffffff, 0.5);
@@ -31,7 +31,6 @@ console.log(canvasHeight);
 
     var light2 = new THREE.PointLight(0xffffff, 0.5);
     scene.add(light2);
-
 
     //3D text
     var mesh;
@@ -41,13 +40,25 @@ console.log(canvasHeight);
         init(font);
     });
 
-    // https://threejs.org/docs/#api/geometries/Texgeometry
-    function init(font) {
+    // https://threejs.org/docs/#api/geometries/TextGeometry
+function init(font) {    
+        
+        var textHash = "BATOU";
+        
+        // Take the text from the hash (url after #)
+        var hash = document.location.hash.substr( 1 );
+    
+        // check on lenght 
+        if ( hash.length !== 0 ) {
+            textHash = hash;
+        }
+    // for using the hash we need http://localhost:8080/index/#batou
+        console.log("the text is ", textHash);
+    
         var theText = "BATOU";
-        //var theText = document.getElementById('text3D').value;
-        console.log("the text is ", theText);
-
-        var geometry = new THREE.TextGeometry(theText, {
+        // var theText = document.getElementById('text3D').value;
+    
+        var geometry = new THREE.TextGeometry(textHash, {
             font: font,
             size: 80,
             height: 20,
