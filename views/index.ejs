@@ -56,18 +56,21 @@
 
                     <!-- Contenu -->
 
-                    <div class="container col-8" id="contenu">
-                        <!-- <% if (errCo) { %> -->
+                    <div class="container col-8">
+                        <% if (errCo) { %>
                         <!-- <div class="container col-8" id="contenu"> -->
-                        <div class="alert alert-danger" role="alert">Identifiants incorrects</div>
-                        <!-- </div> -->
-                        <!-- <% } %> -->
+                        <div class="alert alert-danger text-center" role="alert">Identifiants incorrects</div>
 
-                        <% if (inscr) { %>
-                        <div class="alert alert-success" role="alert">Inscription réussie !</div>
+                        <!-- </div> -->
                         <% } %>
 
-                        <img src="public/images/bague.jpg">
+                        <% if (inscr) { %>
+                            <div class="alert alert-success text-center" role="alert">Inscription réussie !</div>
+                            <% } %>
+                                <div id="contenu">                                    
+                                    <img src="public/images/bague.jpg">
+                                </div>
+                                
                     </div>
 
                     <!-- Panel droit -->
