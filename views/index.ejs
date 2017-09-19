@@ -84,6 +84,7 @@
                             <option>2</option>
                         </select>
                     </div>
+
                     <div class="form-group">
                         <p>Sélectionner finition</p>
                         <select class="form-control">
@@ -91,6 +92,25 @@
                             <option>1</option>
                             <option>2</option>
                         </select>
+
+
+                    <!-- Contenu -->
+
+                    <div class="container col-8">
+                        <% if (errCo) { %>
+                        <!-- <div class="container col-8" id="contenu"> -->
+                        <div class="alert alert-danger text-center" role="alert">Identifiants incorrects</div>
+
+                        <!-- </div> -->
+                        <% } %>
+
+                        <% if (inscr) { %>
+                            <div class="alert alert-success text-center" role="alert">Inscription réussie !</div>
+                            <% } %>
+                                <div id="contenu">                                    
+                                    <img src="public/images/bague.jpg">
+                                </div>
+
                     </div>
                     <label>Prix</label>
                     <div class="form-group text-center">

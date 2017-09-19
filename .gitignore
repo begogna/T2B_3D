@@ -3,3 +3,4 @@
 .idea/
 node_modules/
 model/coDB.js
+membres.sql
