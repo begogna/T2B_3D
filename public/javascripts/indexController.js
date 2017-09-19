@@ -1,34 +1,36 @@
-// var IndexController = function () {
-$(document).ready(function () {
+// // var IndexController = function () {
+// $(document).ready(function () {
 
-    console.log("aqui");
+//     console.log("aqui");
 
-    //Submit form
-    $("#btn_create").click(function () {
-        var text = $("#inputText").val();
+//     //Submit form
+//     $("#btn_create").click(function () {
+//         var text = $("#text3D").val();
 
-        if (validation())// Calling validation function
-        {
-            $(".form_create").submit();//form submission
-            console.log(text);
-        }
-        console.log("alli 2");
-    });
-
-
-    //  Validate the fields of the form
-    function validation() {
-        var text = $("#inputText").val();
-
-        if (text === '') {
-            alert("Please fill all fields...!!!!!!");
-            return false;
-        }
-        else {
-            return true;
-        }
-    }
+//         if (validation())// Calling validation function
+//         {
+//             $(".form_create").submit();//form submission
+//             //Write the text in the 3DCanvas div
+            
+//             console.log(text);
+//         }
+//         console.log("alli 2");
+//     });
 
 
-});
-// }(); //IndexController
+//     //  Validate the fields of the form
+//     function validation() {
+//         var text = $("#text3D").val();
+
+//         if (text === '') {
+//             alert("Please fill all fields...!!!!!!");
+//             return false;
+//         }
+//         else {
+//             return true;
+//         }
+//     }
+
+
+// });
+// // }(); //IndexController

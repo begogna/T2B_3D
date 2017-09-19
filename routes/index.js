@@ -6,25 +6,49 @@ var sess;
 router.get('/', function (req, res, next) {
         
         sess = req.session;
+<<<<<<< HEAD
         var paramInscr = req.query.inscr;
         var paramCo = req.query.co;
         
         if (paramCo === 'err') {
             res.render('index', {title: 'TBB', errCo: true, co: false, nomMembre: null, inscr: false});
+=======
+        var text3D;
+
+        if (req.query.text3D){
+            text3D = req.query.text3D;
+        }
+        else {
+            text3D = null
+        }
+
+       
+        if (sess.errCO) {
+            res.render('index', {title: 'TBB', errCo: true, co: false, nomMembre: null, t3d: text3D});
+>>>>>>> adding 3D on going
         }
         else if (sess.mail) {
             //APPEL DU MODEL - CO BDD / REQS
             var modelMembres = require('../model/modelMembre');
             
             modelMembres.selectByMail(sess.mail, function (datas) {
+<<<<<<< HEAD
                 res.render('index', {title: 'TBB', errCo: false, co: true, nomMembre: datas[0]['prenom'], inscr: false});
+=======
+                res.render('index', {title: 'TBB', errCo: false, co: true, nomMembre: datas[0]['prenom'], t3d: text3D});
+>>>>>>> adding 3D on going
             });
         }
         else if (paramInscr === 'done') {
             res.render('index', {title: 'TBB', errCo: false, co: false, nomMembre: null, inscr: true});
         }
         else {
+<<<<<<< HEAD
             res.render('index', {title: 'TBB', errCo: false, co: false, nomMembre: null, inscr: false});
+=======
+            console.log('pas rentre dans co');
+            res.render('index', {title: 'TBB', errCo: false, co: false, nomMembre: null, t3d: text3D});
+>>>>>>> adding 3D on going
         }
     }
 );

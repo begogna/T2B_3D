@@ -1,13 +1,13 @@
-var textGeo = function () {
-    
-
+  
 var renderer,
     scene,
-    camera,
-    myCanvas = document.getElementById('myCanvas');
-
+    camera;
+    myCanvas = document.getElementById('3DCanvas');
+    console.log(myCanvas);
+    
 //RENDERER
 renderer = new THREE.WebGLRenderer({ canvas: myCanvas, antialias: true });
+console.log("dos");
 renderer.setClearColor(0x000000);
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -30,7 +30,7 @@ scene.add(light2);
 //3D text
 var mesh;
 var loader = new THREE.FontLoader();
-loader.load('fonts/droid/droid_sans_bold.typeface.json', function (font) {
+loader.load('../public/fonts/droid/droid_sans_bold.typeface.json', function (font) {
     console.log("calling init threejs");
     init(font);
 });
@@ -38,10 +38,12 @@ loader.load('fonts/droid/droid_sans_bold.typeface.json', function (font) {
 // https://threejs.org/docs/#api/geometries/Texgeometry
 function init(font) {
     // var theText = "BATOU";
-    var theText = document.getElementById("inputText").value;
+    var theText = document.getElementById("text3D").value;
+    console.log("tres");
+    
     console.log(theText);
 
-    var geometry = new THREE.Texgeometry(theText, {
+    var geometry = new THREE.TextGeometry(theText, {
         font: font,
         size: 80,
         height: 20,
@@ -80,10 +82,6 @@ function init(font) {
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
 
-    var container = document.getElementById('contenu');
-    renderer.domElement.style.position = "relative";
-    container.appendChild(renderer.domElement);
-
 
     scene.add(mesh);
     //RENDER LOOP
@@ -97,8 +95,7 @@ function render() {
     renderer.render(scene, camera);
 
     requestAnimationFrame(render);
-
 }
 
 
-}();
+
