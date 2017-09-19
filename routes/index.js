@@ -5,20 +5,22 @@ var sess;
 
 router.get('/', function (req, res, next) {
 
+    console.log("dans le get");
     sess = req.session;
 
 
     var paramInscr = req.query.inscr;
     var paramCo = req.query.co;
     var text3D;
+    if (req.query.text3D) {
+        text3D = req.query.text3D;
+        console.log(text3D);
+    }
 
     if (paramCo === 'err') {
         res.render('index', { title: 'TBB', errCo: true, co: false, nomMembre: null, inscr: false, t3d: text3D });
     }
 
-    if (req.query.text3D) {
-        text3D = req.query.text3D;
-    }
     else {
         text3D = null
     }
@@ -50,6 +52,8 @@ router.get('/', function (req, res, next) {
 
 router.post('/', function (req, res) {
 
+    console.log("dans le post");
+    
     sess = req.session;
 
     var mail = req.body.mail;

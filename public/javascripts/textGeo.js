@@ -37,9 +37,9 @@ loader.load('../public/fonts/droid/droid_sans_bold.typeface.json', function (fon
 
 // https://threejs.org/docs/#api/geometries/Texgeometry
 function init(font) {
-     var theText = "BATOU";
-    //var theText = document.getElementById("text3D").value;
-    console.log(theText);
+    var theText = "BATOU";
+    //var theText = document.getElementById('text3D').value;
+    console.log( "the text is ", theText);
     
     var geometry = new THREE.TextGeometry(theText, {
         font: font,
