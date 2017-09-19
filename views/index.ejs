@@ -2,7 +2,13 @@
 <html lang="en">
 
 <% include include/head %>
+<style>
+                body {
+                background-image: url("/public/images/background.jpg");
+                background-size: 100%;
+            }
 
+</style>
 
     <body>
 
@@ -15,76 +21,79 @@
                 <div class="row panel">
                     <div class="col-2">
                         <div class="card">
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <p>Texte</p>
-                                    <input class="form-control" placeholder="Texte">
+                            <form action="/createPost" method="post" id="form_create">
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <p>Texte</p>
+                                        <input name="text3D" id="text3D" class="form-control" placeholder="Texte">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <p>Font</p>
+                                        <select class="form-control">
+                            <option>En mettre plusieurs</option>
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <p>Taille</p>
+                                        <select class="form-control">
+                            <option>10 cm</option>
+                            <option>12 cm</option>
+                            <option>14 cm</option>
+                        </select>
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <a href="">
+                            <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                        </a>
+                                        <a href="">
+                            <i id ="share" class="fa fa-share-alt" aria-hidden="true"></i>
+                        </a>
+                                        <a href="">
+                            <i class="fa fa-file" aria-hidden="true"></i>
+                        </a>
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <button type="submit" class="btn btn-default">Créer</button>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <p>Font</p>
-                                    <select class="form-control">
-                        <option>En mettre plusieurs</option>
-                        <option>1</option>
-                        <option>2</option>
-                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <p>Taille</p>
-                                    <select class="form-control">
-                        <option>10 cm</option>
-                        <option>12 cm</option>
-                        <option>14 cm</option>
-                    </select>
-                                </div>
-                                <div class="form-group text-center">
-                                    <a href="">                                        
-                                        <i class="fa fa-floppy-o" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="">
-                                        <i id ="share" class="fa fa-share-alt" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="">
-                                        <i class="fa fa-file" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                                <div class="form-group text-center">
-                                    <button type="submit" class="btn btn-default">Créer</button>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
                     <!-- Contenu -->
-
                     <div class="container col-8">
                         <% if (errCo) { %>
-                        <!-- <div class="container col-8" id="contenu"> -->
-                        <div class="alert alert-danger text-center" role="alert">Identifiants incorrects</div>
+                            <!-- <div class="container col-8" id="contenu"> -->
+                            <div class="alert alert-danger text-center" role="alert">Identifiants incorrects</div>
 
-                        <!-- </div> -->
-                        <% } %>
-
-                        <% if (inscr) { %>
-                            <div class="alert alert-success text-center" role="alert">Inscription réussie !</div>
+                            <!-- </div> -->
                             <% } %>
-                                <div id="contenu">                                    
-                                    <img src="public/images/bague.jpg">
-                                </div>
-                                
+
+                                <% if (inscr) { %>
+                                    <div class="alert alert-success text-center" role="alert">Inscription réussie !</div>
+                                    <% } %>
+                                        <!-- <div class="canvas"> -->
+                                            <canvas id="threecanvas">
+                                                <!-- 3d canvas here -->
+                                            </canvas>
+                                        <!-- </div> -->
                     </div>
+
 
                     <!-- Panel droit -->
 
                     <div class="col-2">
                         <div class="card">
                             <div class="card-body">
-                                <div class="form-group margin: 5em">
+                                <div class="form-group">
                                     <p>Sélectionner matériel</p>
                                     <select class="form-control">
-                        <option>Sélectionner matériel</option>
-                        <option>1</option>
-                        <option>2</option>
-                    </select>
+                            <option>Sélectionner matériel</option>
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
                                 </div>
                                 <div class="form-group">
                                     <p>Sélectionner finition</p>
@@ -102,9 +111,12 @@
                         </div>
                     </div>
                 </div>
+
             </div>
 
 
+            <script src="../public/javascripts/three.min.js"></script>
+            <script src="../public/javascripts/textGeo.js"></script>
     </body>
 
 </html>
