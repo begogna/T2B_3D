@@ -3,6 +3,7 @@
 
 <% include include/head %>
 
+
 <body>
 
 <% include include/navpopup %>
@@ -15,60 +16,61 @@
         <div class="col-2">
             <div class="card">
                 <div class="card-body">
-                    <form action="posts/createPost" method="post">
-                        <div class="form-group">
-                            <p>Texte</p>
-                            <input name="texte3d" class="form-control" placeholder="Texte">
-                        </div>
-                        <div class="form-group">
-                            <p>Font</p>
-                            <select class="form-control">
-                                <option>En mettre plusieurs</option>
-                                <option>1</option>
-                                <option>2</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <p>Taille</p>
-                            <select class="form-control">
-                                <option>10 cm</option>
-                                <option>12 cm</option>
-                                <option>14 cm</option>
-                            </select>
-                        </div>
-                        <div class="form-group text-center">
-                            <a href="">
-                                <i class="fa fa-floppy-o" aria-hidden="true"></i>
-                            </a>
-                            <a href="">
-                                <i id="share" class="fa fa-share-alt" aria-hidden="true"></i>
-                            </a>
-                            <a href="">
-                                <i class="fa fa-file" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                        <div class="form-group text-center">
-                            <button type="submit" class="btn btn-default">Créer</button>
-                        </div>
-                    </form>
+                    <div class="form-group">
+                        <p>Texte</p>
+                        <input class="form-control" placeholder="Texte">
+                    </div>
+                    <div class="form-group">
+                        <p>Font</p>
+                        <select class="form-control">
+                            <option>En mettre plusieurs</option>
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <p>Taille</p>
+                        <select class="form-control">
+                            <option>10 cm</option>
+                            <option>12 cm</option>
+                            <option>14 cm</option>
+                        </select>
+                    </div>
+                    <div class="form-group text-center">
+                        <a href="">
+                            <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                        </a>
+                        <a href="">
+                            <i id ="share" class="fa fa-share-alt" aria-hidden="true"></i>
+                        </a>
+                        <a href="">
+                            <i class="fa fa-file" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-default">Créer</button>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Contenu -->
 
-        <div class="container col-8" id="contenu">
-            <!-- <% if (errCo) { %> -->
+        <div class="container col-8">
+            <% if (errCo) { %>
             <!-- <div class="container col-8" id="contenu"> -->
-            <div class="alert alert-danger" role="alert">Identifiants incorrects</div>
-            <!-- </div> -->
-            <!-- <% } %> -->
+            <div class="alert alert-danger text-center" role="alert">Identifiants incorrects</div>
 
-            <% if (inscr) { %>
-            <div class="alert alert-success" role="alert">Inscription réussie !</div>
+            <!-- </div> -->
             <% } %>
 
-            <img src="../public/images/bague.jpg">
+            <% if (inscr) { %>
+            <div class="alert alert-success text-center" role="alert">Inscription réussie !</div>
+            <% } %>
+            <div id="contenu">
+                <img src="public/images/bague.jpg">
+            </div>
+
         </div>
 
         <!-- Panel droit -->
@@ -84,7 +86,6 @@
                             <option>2</option>
                         </select>
                     </div>
-
                     <div class="form-group">
                         <p>Sélectionner finition</p>
                         <select class="form-control">
@@ -92,25 +93,6 @@
                             <option>1</option>
                             <option>2</option>
                         </select>
-
-
-                    <!-- Contenu -->
-
-                    <div class="container col-8">
-                        <% if (errCo) { %>
-                        <!-- <div class="container col-8" id="contenu"> -->
-                        <div class="alert alert-danger text-center" role="alert">Identifiants incorrects</div>
-
-                        <!-- </div> -->
-                        <% } %>
-
-                        <% if (inscr) { %>
-                            <div class="alert alert-success text-center" role="alert">Inscription réussie !</div>
-                            <% } %>
-                                <div id="contenu">                                    
-                                    <img src="public/images/bague.jpg">
-                                </div>
-
                     </div>
                     <label>Prix</label>
                     <div class="form-group text-center">
