@@ -5,6 +5,7 @@ var sess;
 
 router.get('/', function (req, res, next) {
 
+    console.log("dans le get");
     sess = req.session;
 
 
@@ -13,7 +14,7 @@ router.get('/', function (req, res, next) {
     var text3D;
     if (req.query.text3D) {
         text3D = req.query.text3D;
-       // console.log("??", text3D);
+        console.log("??", text3D);
     }
 
     if (paramCo === 'err') {
@@ -43,6 +44,7 @@ router.get('/', function (req, res, next) {
     }
     else {
 
+        console.log('pas rentre dans co');
         res.render('index', { title: 'TBB', errCo: false, co: false, nomMembre: null, inscr: false, t3d: text3D });
     }
 }
