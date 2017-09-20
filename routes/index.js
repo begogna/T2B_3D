@@ -43,7 +43,6 @@ router.get('/', function (req, res, next) {
     }
     else {
 
-        console.log('pas rentre dans co');
         res.render('index', { title: 'TBB', errCo: false, co: false, nomMembre: null, inscr: false, t3d: text3D });
     }
 }
