@@ -9,7 +9,7 @@ router.post('/', function (req, res) {
     var text3D = req.body.text3D;
 
     // Get the "value" of the selected option in the fonts dropdown
-    var fontSel = req.body.font_sel;
+    var fontSel = req.body.fontSel;
 
     console.log("le req body ", req.body);
     console.log("le text ", text3D);

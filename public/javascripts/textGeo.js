@@ -39,7 +39,7 @@ var hashParams = hash.split('&');
 
 //Store the parameters in a JSON, taking into account that we know the order in the string 
 var params = {  textHash: hashParams[0] || "BATOU",  //"BATOU" is the text by default
-                fontSel: hashParams[1] || 0};        //by default the first font
+                fontSel: isNaN(hashParams[1]) ? 0 : hashParams[1]};        //by default the first font
 
 //Store the paths of all the fonts in our project following the same order as in the dropdown menu
 var fontsTable = [  "../public/fonts/helvetiker_regular.typeface.json", 
@@ -50,6 +50,11 @@ var fontsTable = [  "../public/fonts/helvetiker_regular.typeface.json",
 
 //Choose the font path associated to the dropdown menu selected item
 var fontSelPath = fontsTable[+params.fontSel];
+
+//Temporarily rewrite the values in the form because with the reload of the submission we loose them
+//TODO: use AJAX
+document.getElementById("text3D").value = params.textHash;
+document.getElementById("fontSel").selectedIndex = params.fontSel;
 
 
 //3D TEXT
