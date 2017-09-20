@@ -2,7 +2,12 @@
 <html lang="en">
 
 <% include include/head %>
-
+    <style>
+        body {
+            background-image: url("/public/images/background.jpg");
+            background-size: 100%;
+        }
+    </style>
 
     <body>
 
@@ -58,7 +63,6 @@
                     </div>
 
                     <!-- Contenu -->
-
                     <div class="container col-8">
                         <% if (errCo) { %>
                             <!-- <div class="container col-8" id="contenu"> -->
@@ -70,15 +74,13 @@
                                 <% if (inscr) { %>
                                     <div class="alert alert-success text-center" role="alert">Inscription réussie !</div>
                                     <% } %>
-                                        <div id="contenu">
-                                            <!-- <img src="../public/images/bague.jpg"> -->
-
-                                            <canvas id="3DCanvas">
-                                                <!-- 3d canvas here -->
-                                            </canvas>
-                                        </div>
-
+                                        <!-- <div class="canvas"> -->
+                                        <canvas id="threecanvas">
+                                            <!-- 3d canvas here -->
+                                        </canvas>
+                                        <!-- </div> -->
                     </div>
+
 
                     <!-- Panel droit -->
 
@@ -96,10 +98,10 @@
                                 <div class="form-group">
                                     <p>Sélectionner finition</p>
                                     <select class="form-control">
-                            <option>Sélectionner finition</option>
-                            <option>1</option>
-                            <option>2</option>
-                        </select>
+                        <option>Sélectionner finition</option>
+                        <option>1</option>
+                        <option>2</option>
+                    </select>
                                 </div>
                                 <label>Prix</label>
                                 <div class="form-group text-center">
