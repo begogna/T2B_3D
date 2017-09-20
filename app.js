@@ -9,6 +9,7 @@ var home = require('./routes/home');
 var index = require('./routes/index');
 var catalogue = require('./routes/catalogue');
 var aPropos = require('./routes/aPropos');
+var createPost = require('./routes/posts/createPost');
 
 var app = express();
 
@@ -35,6 +36,7 @@ app.use('/', home);
 app.use('/index', index);
 app.use('/catalogue', catalogue);
 app.use('/aPropos', aPropos);
+app.use('/createPost', createPost);
 
 
 app.use(function (req, res, next) {
