@@ -69,8 +69,21 @@ p{
     border-radius: 50%;
 }
 
-/* .canvas{
+.canvas{
     text-align: center;
-    margin: 5em auto;
-} */
+    /* margin: 5em auto; */
+}
 
+/* *{
+    box-sizing: border-box;
+    } */
+
+    /* #threecanvas {
+        width: 100%;
+        height: 100%;
+       } */
+
+     
+      #threecanvas{
+        width: 100%;
+      }

@@ -5,9 +5,6 @@ var renderer,
 myCanvas = document.getElementById('threecanvas');
 canvasWidth =myCanvas.parentNode.clientWidth;
 canvasHeight =myCanvas.parentNode.clientHeight;
-console.log("myCanvas ", myCanvas);
-console.log(canvasWidth);
-console.log(canvasHeight);
 
 
     //RENDERER
@@ -16,14 +13,13 @@ console.log(canvasHeight);
     renderer.setClearColor(0x000000);
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(canvasWidth, canvasHeight);
-    // renderer.setClearColor(0x000000, 0);
 
     //CAMERA
     camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 3000);
 
     //SCENE
     scene = new THREE.Scene();
-    scene.background = new THREE.Color(255, 255, 255);
+    // scene.background = new THREE.Color(255, 255, 255);
 
     //LIGHTS
     var light = new THREE.AmbientLight(0xffffff, 0.5);
