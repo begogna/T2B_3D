@@ -57,3 +57,4 @@ exports.inscription = function (nom, prenom, mail, pass) {
         
     });
 };
+
