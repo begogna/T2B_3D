@@ -19,43 +19,19 @@
                             </tr>
                         </thead>
                         <tbody class="text-center">
-                            <tr>
-                                <td><img src="../../public/images/ringicon.jpg"></td>
-                                <td>Helvetiker</td>
-                                <td>Gloss</td>
-                                <td>Argent</td>
-                                <td>100</td>
-                            </tr>
-                            <tr>
-                                <td><img src="../../public/images/ringicon.jpg"></td>
-                                <td>Helvetiker</td>
-                                <td>Gloss</td>
-                                <td>Argent</td>
-                                <td>100</td>
 
-                            </tr>
-                            <tr>
-                                <td><img src="../../public/images/ringicon.jpg"></td>
-                                <td>Helvetiker</td>
-                                <td>Gloss</td>
-                                <td>Argent</td>
-                                <td>100</td>
-                            </tr>
-                            <tr>
-                                <td><img src="../../public/images/ringicon.jpg"></td>
-                                <td>Helvetiker</td>
-                                <td>Gloss</td>
-                                <td>Argent</td>
-                                <td>100</td>
-                            </tr>
-                            <tr>
-                                <td><img src="../../public/images/ringicon.jpg"></td>
-                                <td>Helvetiker</td>
-                                <td>Gloss</td>
-                                <td>Argent</td>
-                                <td>100</td>
 
+                            <% produit.forEach(function(prod) { %>
+
+                            <tr>
+                                <td><img src="../../public/images/ringicon.jpg"></td>
+                                <td><%= prod['nom_font'] %></td>
+                                <td><%= prod['nom_finition'] %></td>
+                                <td><%= prod['nom_materiel'] %></td>
+                                <td><%= prod['prix'] %></td>
                             </tr>
+
+                            <% }); %>
                     </table>
                 </div>
             </div>
