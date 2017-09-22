@@ -11,23 +11,14 @@ router.get('/', function (req, res, next) {
 
     var paramInscr = req.query.inscr;
     var paramCo = req.query.co;
-    var text3D;
-    if (req.query.text3D) {
-        text3D = req.query.text3D;
-        console.log("??", text3D);
-    }
 
     if (paramCo === 'err') {
-        res.render('index', { title: 'TBB', errCo: true, co: false, nomMembre: null, inscr: false, t3d: text3D });
+        res.render('index', { title: 'TBB', errCo: true, co: false, nomMembre: null, inscr: false });
     }
 
-    else {
-        text3D = null
-    }
-
-
+  
     if (sess.errCO) {
-        res.render('index', { title: 'TBB', errCo: true, co: false, nomMembre: null, inscr: false, t3d: text3D });
+        res.render('index', { title: 'TBB', errCo: true, co: false, nomMembre: null, inscr: false });
 
     }
     else if (sess.mail) {
@@ -36,23 +27,19 @@ router.get('/', function (req, res, next) {
 
         modelMembres.selectByMail(sess.mail, function (datas) {
 
-            res.render('index', { title: 'TBB', errCo: false, co: true, nomMembre: datas[0]['prenom'], inscr: false, t3d: text3D });
+            res.render('index', { title: 'TBB', errCo: false, co: true, nomMembre: datas[0]['prenom'], inscr: false });
         });
     }
     else if (paramInscr === 'done') {
         res.render('index', { title: 'TBB', errCo: false, co: false, nomMembre: null, inscr: true });
     }
     else {
-
-        console.log('pas rentre dans co');
-        res.render('index', { title: 'TBB', errCo: false, co: false, nomMembre: null, inscr: false, t3d: text3D });
+        res.render('index', { title: 'TBB', errCo: false, co: false, nomMembre: null, inscr: false });
     }
 }
 );
 
 router.post('/', function (req, res) {
-
-    console.log("dans le post");
     
     sess = req.session;
 
