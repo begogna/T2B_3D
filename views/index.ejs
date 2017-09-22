@@ -8,6 +8,20 @@
             background-size: 100%;
         }
     </style>
+    <!-- <script>
+        function resize() {
+            $("#threecanvas").outerHeight($(window).height() - $("#threecanvas").offset().top - Math.abs($("#threecanvas").outerHeight(true) - $("#threecanvas").outerHeight()));
+            $("#threecanvas").outerWidth($(window).width() - $("#threecanvas").offset().top - Math.abs($("#threecanvas").outerWidth(true) - $("#threecanvas").outerWidth()));
+
+        }
+
+        $(document).ready(function () {
+            resize();
+            $(window).on("resize", function () {
+                resize();
+            });
+        });
+    </script> -->
 
     <body>
 
@@ -70,18 +84,18 @@
                         <% if (errCo) { %>
                             <!-- <div class="container col-8" id="contenu"> -->
                             <div class="alert alert-danger text-center" role="alert">Identifiants incorrects</div>
-
                             <!-- </div> -->
+
                             <% } %>
 
                                 <% if (inscr) { %>
                                     <div class="alert alert-success text-center" role="alert">Inscription réussie !</div>
                                     <% } %>
-                                         <div class="canvas">
-                                        <canvas id="threecanvas">
-                                            <!-- 3d canvas here -->
-                                        </canvas>
-                                         </div>
+                                        <div class="canvas">
+                                            <canvas id="threecanvas">
+                                                <!-- 3d canvas here -->
+                                            </canvas>
+                                        </div>
                     </div>
 
 

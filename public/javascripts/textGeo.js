@@ -3,25 +3,23 @@ var renderer,
     scene,
     camera;
 myCanvas = document.getElementById('threecanvas');
-canvasWidth = myCanvas.parentNode.clientWidth;
-canvasHeight = myCanvas.parentNode.clientHeight;
-console.log("myCanvas ", myCanvas);
-console.log(canvasWidth);
-console.log(canvasHeight);
+canvasWidth =myCanvas.parentNode.clientWidth;
+canvasHeight =myCanvas.parentNode.clientHeight;
 
 
-//RENDERER
-renderer = new THREE.WebGLRenderer({ canvas: myCanvas, antialias: true, alpha: true });
-renderer.setClearColor(0x000000);
-renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize(canvasWidth, canvasHeight);
+    //RENDERER
+    renderer = new THREE.WebGLRenderer({ canvas: myCanvas, antialias: true, alpha: true});
+    console.log("dos");
+    renderer.setClearColor(0x000000);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(canvasWidth, canvasHeight);
 
 //CAMERA
 camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 3000);
 
-//SCENE
-scene = new THREE.Scene();
-scene.background = new THREE.Color(255, 255, 255);
+    //SCENE
+    scene = new THREE.Scene();
+    // scene.background = new THREE.Color(255, 255, 255);
 
 //LIGHTS
 var light = new THREE.AmbientLight(0xffffff, 0.5);
