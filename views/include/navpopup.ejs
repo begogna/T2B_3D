@@ -40,27 +40,18 @@
                     <% if (co) { %>
                         <div class="row">
                             <div class="col">
-                                <form action="/index" method="post"> Bonjour
+                                <form action="/index" method="post">
+                                    Bonjour
                                     <%= nomMembre %>
                                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        <input type="hidden" name="deco" value="deco">
-                                        <button type="submit" class="btn btn-default">Déconnexion</button>
+                                        <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#profilModal">
+                                        Mon Profil</button>
+                                        <!-- <input type="hidden" name="deco" value="deco"> -->
+                                        <button input type="hidden" name="deco" value="deco"type="submit" class="btn btn-default">Déconnexion</button>
                                 </form>
                             </div>
                         </div>
 
-                        <!-- <div class="row">
-                            <div class="col">
-                                <form action="/index" method="post">
-                                    <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#inscriptionModal">
-                                    Bonjour <%= nomMembre %>                                                
-                                    </button>
-                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                    <input type="hidden" name="deco" value="deco">
-                                    <button type="submit" class="btn btn-default">Déconnexion</button>
-                                </form>
-                            </div>
-                        </div> -->
                         <% } %>
         </div>
     </nav>
@@ -147,6 +138,102 @@
                     </form>
                 </div>
                 <div class="col align-self-end"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de profil -->
+
+<div class="modal fade" id="profilModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Mon Profil</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            <div class="modal-body">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col">
+                            <img src="../../public/images/bluering.jpg">
+                            <div class="hov">
+                                <div class="content
+                                            ">
+                                    <h4>Détail de l'article</h4>
+                                    <h5>Taille:</h5>
+                                    <h5>Font:</h5>
+                                    <h5>Matériel:</h5>
+                                    <h5>Finition:</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <img src="../../public/images/bluering.jpg">
+                            <div class="hov">
+                                <div class="content">
+                                    <h2>Voici le détail de votre article</h2>
+                                    <h4>Taille:</h4>
+                                    <h4>Font:</h4>
+                                    <h4>Matériel:</h4>
+                                    <h4>Finition:</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <img src="../../public/images/bluering.jpg">
+                            <div class="hov">
+                                <div class="content">
+                                    <h2>Voici le détail de votre article</h2>
+                                    <h4>Taille:</h4>
+                                    <h4>Font:</h4>
+                                    <h4>Matériel:</h4>
+                                    <h4>Finition:</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <img src="../../public/images/bluering.jpg">
+                            <div class="hov">
+                                <div class="content">
+                                    <h2>Voici le détail de votre article</h2>
+                                    <h4>Taille:</h4>
+                                    <h4>Font:</h4>
+                                    <h4>Matériel:</h4>
+                                    <h4>Finition:</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <img src="../../public/images/bluering.jpg">
+                            <div class="hov">
+                                <div class="content">
+                                    <h2>Voici le détail de votre article</h2>
+                                    <h4>Taille:</h4>
+                                    <h4>Font:</h4>
+                                    <h4>Matériel:</h4>
+                                    <h4>Finition:</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <img src="../../public/images/bluering.jpg">
+                            <div class="hov">
+                                <div class="content">
+                                    <h2>Voici le détail de votre article</h2>
+                                    <h4>Taille:</h4>
+                                    <h4>Font:</h4>
+                                    <h4>Matériel:</h4>
+                                    <h4>Finition:</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

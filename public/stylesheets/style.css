@@ -114,3 +114,7 @@ p{
 th{
     text-align: center;
 }
+
+.modal fade{
+    width:1000px;
+    }
