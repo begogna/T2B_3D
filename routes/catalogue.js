@@ -7,10 +7,10 @@ var modelProduit = require('../model/modelProduit');
 router.get('/', function(req, res, next) {
     sess = req.session;
     
-    modelProduit.getAllProducts(function (datas) {
-        console.log(datas);
+    modelProduit.getAllProducts(function (datas2) {
+        //console.log(datas);
         if (sess.errCO) {
-            res.render('catalogue', {title: 'TBB', errCo: true, co: false, nomMembre: null, produit: datas});
+            res.render('catalogue', {title: 'TBB', errCo: true, co: false, nomMembre: null, produit: datas2});
         }
         else if (sess.mail) {
         
@@ -18,11 +18,11 @@ router.get('/', function(req, res, next) {
             var modelMembres = require('../model/modelMembre');
         
             modelMembres.selectByMail(sess.mail, function (datas) {
-                res.render('catalogue', {title: 'TBB', errCo: false, co: true, nomMembre: datas[0]['prenom'], produit: datas});
+                res.render('catalogue', {title: 'TBB', errCo: false, co: true, nomMembre: datas[0]['prenom'], produit: datas2});
             });
         }
         else {
-            res.render('catalogue', {title: 'TBB', errCo: false, co: false, nomMembre: null, produit: datas});
+            res.render('catalogue', {title: 'TBB', errCo: false, co: false, nomMembre: null, produit: datas2});
         }
     });
     

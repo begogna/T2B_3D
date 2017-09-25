@@ -13,3 +13,15 @@ exports.getAllProducts = function (callback) {
        callback(results);
     });
 };
+
+exports.addProdProfil = function (texte, taille, font) {
+ 
+        var sql = "INSERT INTO produit(texte, taille, font) VALUES ?";
+        var values = [
+            [texte, taille, font]
+        ];
+        co.query(sql, [values], function (err) {
+            if (err) throw err;
+        });
+    
+};
