@@ -13,3 +13,25 @@ exports.getAllProducts = function (callback) {
        callback(results);
     });
 };
+
+exports.getAllProducts2 = function (idMembre, callback) {
+    
+    var query = "SELECT produit.*, fonts.nom_font FROM produit INNER JOIN fonts ON produit.font = fonts.id WHERE membre = "+idMembre;
+    
+    co.query(query, function (error, results, fields) {
+        
+        callback(results);
+    });
+};
+
+exports.addProdProfil = function (texte, taille, font, idMembre) {
+ 
+        var sql = "INSERT INTO produit(texte, taille, font, membre) VALUES ?";
+        var values = [
+            [texte, taille, font, idMembre]
+        ];
+        co.query(sql, [values], function (err) {
+            if (err) throw err;
+        });
+    
+};
