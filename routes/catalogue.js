@@ -8,9 +8,10 @@ router.get('/', function(req, res, next) {
     sess = req.session;
     
     modelProduit.getAllProducts(function (datas2) {
-        //console.log(datas);
+        console.log(datas2);
         if (sess.errCO) {
-            res.render('catalogue', {title: 'TBB', errCo: true, co: false, nomMembre: null, produit: datas2});
+            res.render('catalogue', {title: 'TBB', errCo: true, co: false, nomMembre: null, produit: datas2
+        });
         }
         else if (sess.mail) {
         

@@ -10,15 +10,13 @@ $(function () {
    
     //montrer light au survol de img
     img.mouseenter(function () {
-        $(this).next().fadeIn(3434);
-        console.log($(this).next())
-        content.addClass('content_hover');
+        $(this).next().fadeIn('slow');
+        // content.addClass('content_hover');
     });
 
     light.mouseleave(function(){
-        $(this).fadeout('slow');
-        content.removeClass('content_hover');
-        // light.hide();
+        $(this).fadeOut('slow');
+        // content.removeClass('content_hover');
         
     });
 });

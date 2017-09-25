@@ -19,7 +19,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/catalogue">CATALOGUE</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item">
                         <a class="nav-link" href="/aPropos">A PROPOS</a>
                     </li>
                 </ul>
@@ -40,27 +40,17 @@
                     <% if (co) { %>
                         <div class="row">
                             <div class="col">
-                                <form action="/index" method="post"> Bonjour
+                                <form action="/index" method="post">
+                                    Bonjour
                                     <%= nomMembre %>
                                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                        <a href="/profil">Mon Profil</a>
                                         <input type="hidden" name="deco" value="deco">
                                         <button type="submit" class="btn btn-default">Déconnexion</button>
                                 </form>
                             </div>
                         </div>
 
-                        <!-- <div class="row">
-                            <div class="col">
-                                <form action="/index" method="post">
-                                    <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#inscriptionModal">
-                                    Bonjour <%= nomMembre %>                                                
-                                    </button>
-                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                    <input type="hidden" name="deco" value="deco">
-                                    <button type="submit" class="btn btn-default">Déconnexion</button>
-                                </form>
-                            </div>
-                        </div> -->
                         <% } %>
         </div>
     </nav>
@@ -76,28 +66,28 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-            </div>
-            <div class="modal-body">
-                <div class="col align-self-start"></div>
-                <div class="col align-self-center">
-                    <form action="../index" method="post">
-                        <a id="to-register-trigger" style="display:inline-block;" href="#">Pas encore inscrit ?</a>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" name="mail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            </div>
+                            <div class="modal-body">
+                                <div class="col align-self-start"></div>
+                                <div class="col align-self-center">
+                                    <form action="../index" method="post">
+                                        <a id="to-register-trigger" style="display:inline-block;" href="#">Pas encore inscrit ?</a>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Email address</label>
+                                            <input type="email" name="mail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Password</label>
+                                            <input type="password" name="pass" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                            <a id="reset-popup-trigger" href="#">mot de passe oublié ?</a>
+                                        </div>
+                                        <button type="submit" class="btn btn-blue">Se connecter</button>
+                                    </form>
+                                </div>
+                                <div class="col align-self-end"></div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" name="pass" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                            <a id="reset-popup-trigger" href="#">mot de passe oublié ?</a>
-                        </div>
-                        <button type="submit" class="btn btn-blue">Se connecter</button>
-                    </form>
-                </div>
-                <div class="col align-self-end"></div>
-            </div>
         </div>
-    </div>
 </div>
 
 <!-- Modal d'inscription -->
