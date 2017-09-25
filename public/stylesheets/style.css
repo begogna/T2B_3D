@@ -91,7 +91,7 @@ p{
 .hov{
     position: absolute;
     top: 30px;
-    left: 0;
+    left: 100px;
     background-color: rgba(255, 255, 255, 0.6);
     height: 200px;
     width:200px;
@@ -99,22 +99,20 @@ p{
     
 }
 
-.content{
+/* .content{
     margin-top: 20%;
     transform: translateY(-50px);
-    transition-duration: 0.5s;
-}
+    transform: translateX(100px);
+    transition-duration: 5s;
+} */
 
-.content_hover{
+/* .content_hover{
     margin-top: 20%;
-    transform: translateY(0);
-    transition-duration: 0.5s;
-}
+    transform: translateY(0);    
+    transition-duration: 0.25s;
+} */
 
 th{
     text-align: center;
 }
 
-.modal fade{
-    width:1000px;
-    }

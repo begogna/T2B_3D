@@ -94,7 +94,7 @@ router.post('/', function (req, res) {
     }
     else if (deco) {
         req.session.destroy();
-        res.redirect("back");
+        res.redirect("/");
     }
 });
 
