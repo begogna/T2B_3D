@@ -11,13 +11,16 @@ router.post('/', function (req, res) {
     
     var text3D = req.body.text3D;
     var taille = req.body.taille;
-
+    var font = parseInt(req.body.fontSel, 10);
+    font++;
+    
+    
     // Get the "value" of the selected option in the fonts dropdown
     var fontSel = req.body.fontSel;
 
-    console.log("le req body ", req.body);
-    console.log("le text ", text3D);
-    console.log("la font ", fontSel);
+    // console.log("le req body ", req.body);
+    // console.log("le text ", text3D);
+    // console.log("la font ", font);
     
     var modelProd = require('../../model/modelProduit');
     var modelMembres = require('../../model/modelMembre');
@@ -26,7 +29,7 @@ router.post('/', function (req, res) {
         modelMembres.selectByMail(sess.mail, function (datas) {
         
             // console.log(datas[0]['id']);
-            modelProd.addProdProfil(text3D, taille, fontSel, datas[0]['id']);
+            modelProd.addProdProfil(text3D, taille, font, datas[0]['id']);
         });
     }
     
