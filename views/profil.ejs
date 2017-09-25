@@ -10,80 +10,24 @@
                 <h3>Bienvenue sur votre profil <%= nomMembre %></h3>
                 <h4>Passez le curseur sur votre article pour voir le détail</h4>
                 <div class="row">
+
+                    <% produit.forEach(function(prod) { %>
+
                     <div class="col">
                         <img src="../../public/images/bluering.jpg">
                         <div class="hov">
                             <div class="content">
                                 <h5>Détail de votre article</h5>
-                                <h6>Taille:</h6>
-                                <h6>Font:</h6>
+                                <h6>Taille: <%= prod['taille'] %></h6>
+                                <h6>Font: <%= prod['nom_font'] %></h6>
                                 <h6>Matériel:</h6>
                                 <h6>Finition:</h6>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <img src="../../public/images/bluering.jpg">
-                        <div class="hov">
-                            <div class="content">
-                                <h5>Détail de votre article</h5>
-                                <h6>Taille:</h6>
-                                <h6>Font:</h6>
-                                <h6>Matériel:</h6>
-                                <h6>Finition:</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <img src="../../public/images/bluering.jpg">
-                        <div class="hov">
-                            <div class="content">
-                                <h5>Détail de votre article</h5>
-                                <h6>Taille:</h6>
-                                <h6>Font:</h6>
-                                <h6>Matériel:</h6>
-                                <h6>Finition:</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <img src="../../public/images/bluering.jpg">
-                        <div class="hov">
-                            <div class="content">
-                                <h5>Détail de votre article</h5>
-                                <h6>Taille:</h6>
-                                <h6>Font:</h6>
-                                <h6>Matériel:</h6>
-                                <h6>Finition:</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <img src="../../public/images/bluering.jpg">
-                        <div class="hov">
-                            <div class="content">
-                                <h5>Détail de votre article</h5>
-                                <h6>Taille:</h6>
-                                <h6>Font:</h6>
-                                <h6>Matériel:</h6>
-                                <h6>Finition:</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <img src="../../public/images/bluering.jpg">
-                        <div class="hov">
-                            <div class="content">
-                                <h5>Détail de votre article</h5>
-                                <h6>Taille:</h6>
-                                <h6>Font:</h6>
-                                <h6>Matériel:</h6>
-                                <h6>Finition:</h6>
-                            </div>
-                        </div>
-                    </div>
+
+                    <% }); %>
+
                 </div>
             </div>
             <% include include/foot %>

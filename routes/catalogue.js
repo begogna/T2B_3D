@@ -3,7 +3,6 @@ var router = express.Router();
 var modelProduit = require('../model/modelProduit');
 
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
     sess = req.session;
     
