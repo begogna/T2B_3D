@@ -2,6 +2,8 @@
 <html lang="en">
 
 <% include include/head %>
+
+
     <style>
         body {
             background-image: url("/public/images/background.jpg");
@@ -32,7 +34,7 @@
                 <!-- Panel gauche -->
 
                 <div class="row panel">
-                    <div class="col-2">
+                    <div class="col-3">
                         <div class="card">
                             <form action="/createPost" method="post" id="form_create">
                                 <div class="card-body">
@@ -54,32 +56,47 @@
                                     </div>
                                     <div class="form-group">
                                         <p>Taille</p>
-                                        <select  name="taille" class="form-control">
+                                        <select name="taille" class="form-control">
                             <option value="10">10 cm</option>
                             <option value="12">12 cm</option>
                             <option value="14">14 cm</option>
                         </select>
                                     </div>
-                                    <div class="form-group text-center">
-                                        <!-- <% if (errCo) { %> -->
-                                        <!-- <div class="alert alert-danger text-center" role="alert">Identifiants incorrects</div> -->
-                                        <!-- <% } %> -->
-                                        <!-- <% if (inscr) { %> -->
-                                        <!-- <i class="fa fa-floppy-o" aria-hidden="true"></i> -->
-                                        <!-- <% } %> -->
-                                        <a href="">
-                                        <i class="fa fa-floppy-o" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="">
-                                        <i id ="share" class="fa fa-share-alt" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="">
-                                        <i class="fa fa-file" aria-hidden="true"></i>
-                                        </a>
+                                    <div class="form-group">
+                                        <p>Sélectionner matériel</p>
+                                        <select class="form-control">
+                                    <option>Sélectionner matériel</option>
+                                    <option>Argent</option>
+                                    <option>Or</option>
+                                </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <p>Sélectionner finition</p>
+                                        <select class="form-control">
+                                <option>Sélectionner finition</option>
+                                <option>Standard</option>
+                                <option>Gloss</option>
+                            </select>
                                     </div>
                                     <div class="form-group text-center">
-                                        <button type="submit" class="btn btn-default">Créer</button>
+                                        <% if (!co) { %>
+                                            <div class="alert alert-danger text-center" role="alert">Veuillez vous connecter pour enregistrer</div>
+                                            <% } %>
+                                                <% if (co) { %>
+                                                    <button type="submit" class="save"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+                                                    <!-- <label>Prix</label> -->
+                                                    <div class="form-group text-center">
+                                                        <button type="button" class="btn btn-default">Créer</button>
+                                                        <button type="submit" class="btn btn-default">Ajouter au panier</button>
+                                                    </div>
+                                                    <!-- <i id ="share" class="fa fa-share-alt" aria-hidden="true"></i>
+                                                    <i class="fa fa-file" aria-hidden="true"></i> -->
+                                                    <% } %>
                                     </div>
+                                    <!-- <div class="form-group text-center">
+                                        <button type="button" class="btn btn-default">Créer</button>
+                                        <button type="submit" class="btn btn-default">Ajouter au panier</button>
+                                    </div> -->
                                 </div>
                             </form>
                         </div>
@@ -88,9 +105,7 @@
                     <!-- Contenu -->
                     <div class="container col-8">
                         <% if (errCo) { %>
-                            <!-- <div class="container col-8" id="contenu"> -->
                             <div class="alert alert-danger text-center" role="alert">Identifiants incorrects</div>
-                            <!-- </div> -->
 
                             <% } %>
 
@@ -107,7 +122,7 @@
 
                     <!-- Panel droit -->
 
-                    <div class="col-2">
+                    <!-- <div class="col-2">
                         <div class="card">
                             <div class="card-body">
                                 <div class="form-group">
@@ -135,11 +150,11 @@
                     </div>
                 </div>
 
-            </div>
+            </div> -->
 
 
-            <script src="../public/javascripts/three.min.js"></script>
-            <script src="../public/javascripts/textGeo.js"></script>
+                    <script src="../public/javascripts/three.min.js"></script>
+                    <script src="../public/javascripts/textGeo.js"></script>
     </body>
 
 </html>

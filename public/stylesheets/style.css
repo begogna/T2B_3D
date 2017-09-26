@@ -88,7 +88,7 @@ p{
     width: 100%;
     }
 
-.hov{
+/* .hov{
     position: absolute;
     top: 30px;
     left: 100px;
@@ -97,16 +97,16 @@ p{
     width:200px;
     color: black;
     
-}
+} */
 
 /* .content{
     margin-top: 20%;
     transform: translateY(-50px);
     transform: translateX(100px);
     transition-duration: 5s;
-} */
+}
 
-/* .content_hover{
+.content_hover{
     margin-top: 20%;
     transform: translateY(0);    
     transition-duration: 0.25s;
@@ -116,3 +116,16 @@ th{
     text-align: center;
 }
 
+.save{
+    border:0;
+    background:none;
+}
+
+.justify-content-start{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+#profil{
+    margin-right: 20px;
+}

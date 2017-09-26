@@ -14,9 +14,9 @@ exports.getAllProducts = function (callback) {
     });
 };
 
-exports.getAllProducts2 = function (idMembre, callback) {
+exports.getAllProducts2 = function (idMembre, callback) { // produit du membre en question
     
-    var query = "SELECT produit.*, fonts.nom_font FROM produit INNER JOIN fonts ON produit.font = fonts.id WHERE membre = "+idMembre;
+    var query = "SELECT produit.*, fonts.nom_font, finition.nom_finition, materiel.nom_materiel FROM produit INNER JOIN fonts ON produit.font = fonts.id INNER JOIN finition ON produit.finition = finition.id INNER JOIN materiel ON produit.materiel = materiel.id WHERE membre = "+idMembre;
     
     co.query(query, function (error, results, fields) {
         
@@ -24,11 +24,11 @@ exports.getAllProducts2 = function (idMembre, callback) {
     });
 };
 
-exports.addProdProfil = function (texte, taille, font, idMembre) {
+exports.addProdProfil = function (texte, taille, font, materiel, finition, idMembre) {
  
-        var sql = "INSERT INTO produit(texte, taille, font, membre) VALUES ?";
+        var sql = "INSERT INTO produit(texte, taille, font, materiel, finition, membre) VALUES ?"; //insert mongodB
         var values = [
-            [texte, taille, font, idMembre]
+            [texte, taille, font, materiel, finition, idMembre]
         ];
         co.query(sql, [values], function (err) {
             if (err) throw err;

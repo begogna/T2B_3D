@@ -10,7 +10,7 @@ router.get('/', function (req, res, next) {
     
     modelMembres.selectByMail(sess.mail, function (datas) {
         
-        modelProduit.getAllProducts2(datas[0]['id'], function (datas2) {
+        modelProduit.getAllProducts2(datas[0]['id'], function (datas2) { //datas param entrant et datas 2 callback
             //console.log(datas);
             if (sess.errCO) {
                 res.render('profil', {title: 'TBB', errCo: true, co: false, nomMembre: null, produit: datas2});

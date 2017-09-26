@@ -36,7 +36,7 @@ var hash = document.location.hash.substr(1);
 var hashParams = hash.split('&');
 
 //Store the parameters in a JSON, taking into account that we know the order in the string 
-var params = {  textHash: hashParams[0] || "BATOU",  //"BATOU" is the text by default
+var params = {  textHash: hashParams[0] || "mon bijou",  //"BATOU" is the text by default
                 fontSel: isNaN(hashParams[1]) ? 0 : hashParams[1]};        //by default the first font
 
 //Store the paths of all the fonts in our project following the same order as in the dropdown menu
