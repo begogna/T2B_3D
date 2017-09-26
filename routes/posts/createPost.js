@@ -11,7 +11,7 @@ router.post('/', function (req, res) { // console.log("dans le post de create");
     var finition = req.body.finition;
     var font = parseInt(req.body.fontSel, 10);
     font++;
-
+    
     // Get the "value" of the selected option in the fonts dropdown
     var fontSel = req.body.fontSel;
     var modelProd = require('../../model/modelProduit');

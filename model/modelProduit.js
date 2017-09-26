@@ -16,7 +16,7 @@ exports.getAllProducts = function (callback) {
 
 exports.getAllProducts2 = function (idMembre, callback) { // produit du membre en question
     
-    var query = "SELECT produit.*, fonts.nom_font, finition.nom_finition, materiel.nom_materiel FROM produit INNER JOIN fonts ON produit.font = fonts.id INNER JOIN finition ON produit.finition = finition.id INNER JOIN materiel ON produit.materiel = materiel.id WHERE membre = "+idMembre;
+    var query = "SELECT produit.*, fonts.nom_font FROM produit INNER JOIN fonts ON produit.font = fonts.id WHERE membre = "+idMembre;
     
     co.query(query, function (error, results, fields) {
         

@@ -26,7 +26,7 @@ router.get('/', function (req, res, next) {
                         nomMembre: datas[0]['prenom'],
                         produit: datas2
                     });
-              
+                console.log(datas2);
             }
             else {
                 res.render('profil', {title: 'TBB', errCo: false, co: false, nomMembre: null, produit: datas2});
